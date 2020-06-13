@@ -32,7 +32,6 @@ app.get("/api/info/:address", async (req, res) => {
         const borough = response.data.normalizedInput.city
         const councilMembers = cityCouncil.filter(member => member.borough === borough)
         let communityBoard = getCommunityBoard(borough, zip)
-        console.log(communityBoard)
 
         // Send back the offices and the council members
         res.send({ offices: response.data.offices, councilMembers, communityBoard })

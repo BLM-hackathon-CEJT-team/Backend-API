@@ -106,7 +106,7 @@ const brooklynCommunityBoards = [
         district: 46,
         email: "bkbrd18@optonline.net",
         zip: 11234
-    },
+    }
 ]
 
 module.exports = { brooklynCommunityBoards }
