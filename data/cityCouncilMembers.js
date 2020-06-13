@@ -318,3 +318,5 @@ const cityCouncil = [
         party: "Democrat"
     },
 ]
+
+module.exports = { cityCouncil }
