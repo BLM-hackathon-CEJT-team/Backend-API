@@ -1,5 +1,6 @@
 const { brooklynCommunityBoards } = require("../data/brooklynCommunityBoards")
 const { queensCommunityBoards } = require("../data/queensCommunityBoards")
+const { bronxCommunityBoards } = require('../data/bronxCommunityBoards')
 
 /*
     Get your local community. If community board isn't found by borough and zip,
@@ -15,6 +16,9 @@ const getCommunityBoard = (borough, zip) => {
             break
         case "Queens":
             communityBoard = queensCommunityBoards.find(board => parseInt(board.zip) == zip)
+            break
+        case "Bronx":
+            communityBoard = bronxCommunityBoards.find(board => parseInt(board.zip) == zip)
             break
         default: 
             communityBoard = undefined
