@@ -1,0 +1,31 @@
+const { brooklynCommunityBoards } = require("../data/brooklynCommunityBoards")
+const { queensCommunityBoards } = require("../data/queensCommunityBoards")
+
+/*
+    Get your local community. If community board isn't found by borough and zip,
+    returns string "Community Board Not Found.", otherwise returns community board
+*/
+const getCommunityBoard = (borough, zip) => {
+    let communityBoard
+
+    // Get borough board members
+    switch(borough) {
+        case "Brooklyn":
+            communityBoard = brooklynCommunityBoards.find(board => parseInt(board.zip) == zip)
+            break
+        case "Queens":
+            communityBoard = queensCommunityBoards.find(board => parseInt(board.zip) == zip)
+            break
+        default: 
+            communityBoard = undefined
+    }
+    
+    // Make sure we found board members, check for undefined
+    if (communityBoard === undefined) {
+        communityBoard = "Community Board Not Found."
+    }
+
+    return communityBoard
+}
+
+module.exports = { getCommunityBoard }

@@ -1,9 +1,8 @@
 const express = require("express")
 const axios = require("axios")
 
-// DATA SETS
+const { getCommunityBoard } = require("./utility")
 const { cityCouncil } = require("./data/cityCouncilMembers")
-const { brooklynCommunityBoards } = require("./data/brooklynCommunityBoards")
 
 const app = express()
 
@@ -14,7 +13,6 @@ const app = express()
 */
 app.get("/api/info/:address", async (req, res) => {
     const address = req.params.address
-    console.log(address)
     const formattedAddress = address.replace(/ /g,"%20");
 
     const key = process.env.GOOGLE_API_KEY
@@ -33,22 +31,8 @@ app.get("/api/info/:address", async (req, res) => {
         
         const borough = response.data.normalizedInput.city
         const councilMembers = cityCouncil.filter(member => member.borough === borough)
-        let communityBoard
-
-        // Get borough board members
-        if (borough === "Brooklyn") {
-
-            communityBoard = brooklynCommunityBoards.find(board => {
-                console.log(typeof parseInt(board.zip))
-                console.log(typeof zip)
-                return parseInt(board.zip) == zip
-            })
-
-            // Make sure we found board members, check for undefined
-            if (communityBoard === undefined) {
-                communityBoard = "Board Members Not Found."
-            }
-        }
+        let communityBoard = getCommunityBoard(borough, zip)
+        console.log(communityBoard)
 
         // Send back the offices and the council members
         res.send({ offices: response.data.offices, councilMembers, communityBoard })
