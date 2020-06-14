@@ -1,3 +1,4 @@
+{   
     {
         "boardNumber": 1,
         "precinct": 40,
@@ -70,4 +71,4 @@
         "email": "gtorres@cb.nyc.gov",
         "zip": 10466
     }
-]
+}
