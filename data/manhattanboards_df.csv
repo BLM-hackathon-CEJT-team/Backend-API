@@ -1,0 +1,14 @@
+boardNumber,Precinct,Email,Zip,Nodes
+1,"['1', '5', '7']",man01@cb.nyc.gov,10007,1
+2,"['1', '5', '6', '9']",bgormley@cb.nyc.gov,10012,2
+3,"['5', '7', '9']",mn03@cb.nyc.gov,10003,3
+4,"['10', '13', 'MSP', 'MNP']",mn03@cb.nyc.gov,10003,4
+4,"['10', '13', 'MSP', 'MNP']",mn03@cb.nyc.gov,10003,5
+5,"['10', 'MSP', 'MNP']",office@cb5.org,10123,6
+6,"['13', '17']",info@cbsix.org,10017,7
+7,"['20', '24', 'CPP']",office@cb7.org,10024,8
+8,"['19', 'CPP']",info@cb8m.com,10022,9
+9,"['26', '30']",nyc-cb9m@juno.com,10027,10
+10,"['28', '32']",mn10@cb.nyc.gov,10027,11
+11,"['23', '25']",mn11@cb.nyc.gov,10035,12
+12,"['33', '34']",mn11@cb.nyc.gov,10035,13
